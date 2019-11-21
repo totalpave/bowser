@@ -40,7 +40,7 @@
     "babel-plugin-add-module-exports": "^1.0.2",
     "babel-plugin-istanbul": "^5.2.0",
     "compression-webpack-plugin": "^3.0.0",
-    "coveralls": "^3.0.6",
+    "coveralls": "^3.0.8",
     "docdash": "^1.1.1",
     "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^13.2.0",
