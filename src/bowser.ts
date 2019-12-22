@@ -24,7 +24,7 @@ import {
  * @classdesc Bowser is a static object, that provides an API to the Parsers
  * @hideconstructor
  */
-class Bowser {
+export class Bowser {
 
     private constructor() {}
 
