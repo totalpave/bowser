@@ -4,13 +4,13 @@
  * MIT License | (c) Dustin Diaz 2012-2015
  * MIT License | (c) Denis Demchenko 2015-2019
  */
-import Parser from './parser.js';
+import Parser from './parser';
 import {
-  BROWSER_MAP,
-  ENGINE_MAP,
-  OS_MAP,
-  PLATFORMS_MAP,
-} from './constants.js';
+    BROWSER_MAP,
+    ENGINE_MAP,
+    OS_MAP,
+    PLATFORMS_MAP
+} from './constants';
 
 /**
  * Bowser class.
@@ -24,6 +24,9 @@ import {
  * @hideconstructor
  */
 class Bowser {
+
+    private constructor() {}
+
   /**
    * Creates a {@link Parser} instance
    *
@@ -37,12 +40,12 @@ class Bowser {
    * const parser = Bowser.getParser(window.navigator.userAgent);
    * const result = parser.getResult();
    */
-  static getParser(UA, skipParsing = false) {
-    if (typeof UA !== 'string') {
-      throw new Error('UserAgent should be a string');
+    public static getParser(UA: string, skipParsing: boolean = false): Parser {
+        if (typeof UA !== 'string') {
+            throw new Error('UserAgent should be a string');
+        }
+        return new Parser(UA, skipParsing);
     }
-    return new Parser(UA, skipParsing);
-  }
 
   /**
    * Creates a {@link Parser} instance and runs {@link Parser.getResult} immediately
@@ -53,25 +56,14 @@ class Bowser {
    * @example
    * const result = Bowser.parse(window.navigator.userAgent);
    */
-  static parse(UA) {
-    return (new Parser(UA)).getResult();
-  }
+    public static parse(UA: string): any {
+        return (new Parser(UA)).getResult();
+    }
 
-  static get BROWSER_MAP() {
-    return BROWSER_MAP;
-  }
-
-  static get ENGINE_MAP() {
-    return ENGINE_MAP;
-  }
-
-  static get OS_MAP() {
-    return OS_MAP;
-  }
-
-  static get PLATFORMS_MAP() {
-    return PLATFORMS_MAP;
-  }
+  public static BROWSER_MAP: any = BROWSER_MAP;
+  public static ENGINE_MAP: any = ENGINE_MAP;
+  public static OS_MAP: any = OS_MAP;
+  public static PLATFORMS_MAP: any = PLATFORMS_MAP;
 }
 
 export default Bowser;

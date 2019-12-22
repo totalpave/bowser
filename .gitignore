@@ -5,3 +5,6 @@ coverage
 dist
 bundled.js*
 es5.js*
+.*cache
+*.tsbuildinfo
+lib
