@@ -7,7 +7,7 @@ import Utils from './utils';
 /**
  * The main class that arranges the whole parsing process.
  */
-class Parser {
+export class Parser {
 
     private _ua: string;
     private parsedResult: any;
